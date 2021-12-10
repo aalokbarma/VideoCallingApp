@@ -10,21 +10,28 @@
 
 import React from 'react';
 import {SafeAreaView,StatusBar,Text,} from 'react-native';
-import CallingScreen from './screens/callingScreen';
-import CallScreen from './screens/callScreen';
-import ContactScreen from './screens/contactsScreen';
-import IncomingCallScreen from './screens/incomingCallScreen';
+
 import Styles from './Styles';
+
+import { NavigationContainer } from '@react-navigation/native';
+import Navigation from './navigation';
 
 const App = () => {
 
   return (
     <SafeAreaView style={Styles.mainPage}>
       <StatusBar/>
-      {/* <ContactScreen /> */}
+      <Navigation />
+
+
+
+
+      {/* <NavigationContainer>
+        <ContactScreen />
+      </NavigationContainer> */}
       {/* <CallingScreen /> */}
       {/* <IncomingCallScreen /> */}
-      <CallScreen />
+      {/* <CallScreen /> */}
     </SafeAreaView>
   );
 };

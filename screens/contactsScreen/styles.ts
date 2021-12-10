@@ -5,6 +5,7 @@ const Styles = StyleSheet.create({
         padding: 15,
         // marginBottom: 25,
         height: '100%',
+        backgroundColor: 'white',
     },
     contactName: {
         fontSize: 18,
@@ -18,9 +19,17 @@ const Styles = StyleSheet.create({
     },
     contactRow: { 
         flexDirection: "row",
+        justifyContent: 'space-between',
+        alignItems: 'center'
     },
     callButtons: { 
         flexDirection: "row",
+    },
+    callButton: {
+        marginRight: 15,
+    },
+    vidCallButton: {
+        marginRight: 10,
     },
     
 });

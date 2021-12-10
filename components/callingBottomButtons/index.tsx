@@ -5,10 +5,13 @@ import Styles from './styles';;
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Feather from 'react-native-vector-icons/Feather';
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+
+interface callingtypes{
+    onDecline: Function
+}
 
 
-const CallingBottomButtons = () => {
+const CallingBottomButtons = ({onDecline} : callingtypes) => {
     const [videoColor, setVideoColor] = useState('#222');
     const [videoIcon, setVideoIcon] = useState('video-off');
     const [micColor, setMicColor] = useState('#222');
@@ -38,8 +41,9 @@ const CallingBottomButtons = () => {
             setMicIcon('mic-off');
         }
     };
-    const onDecline = () => {
-        console.warn("Decline Button Clicked.")
+    const onDeclines = () => {
+        // console.warn("Decline Button Clicked.");
+        onDecline();
     };
 
 
@@ -56,7 +60,7 @@ const CallingBottomButtons = () => {
                     <Pressable onPress={toggleMic} style = {Styles.buttonContainer}>
                         <Ionicons style = {Styles.buttonIcon} name= {micIcon} size={32} color= {micColor} />
                     </Pressable>
-                    <Pressable onPress={onDecline} style = {[Styles.buttonContainer, {backgroundColor: 'red'}]}>
+                    <Pressable onPress={onDeclines} style = {[Styles.buttonContainer, {backgroundColor: 'red'}]}>
                         <MaterialIcons style = {Styles.buttonIcon} name="call-end" size={32} color="white" />
                     </Pressable>
                 </View>
