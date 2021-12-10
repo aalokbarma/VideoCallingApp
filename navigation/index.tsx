@@ -6,6 +6,7 @@ import CallingScreen from '../screens/callingScreen';
 import CallScreen from '../screens/callScreen';
 import ContactScreen from '../screens/contactsScreen';
 import IncomingCallScreen from '../screens/incomingCallScreen';
+import LoginScreen from '../screens/loginScreen';
 
 const Navigation = () => {
 
@@ -15,7 +16,20 @@ const Navigation = () => {
 
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRouteName={"Contacts"}>
+            <Stack.Navigator>
+                <Stack.Screen 
+                    name='Login' 
+                    component = {LoginScreen} 
+                    options={{
+                        headerStyle: {backgroundColor: '#00b487'},
+                        headerBlurEffect: 'extraLight',
+                        headerTintColor: '#ff8e8e',
+                        headerTitleAlign: 'center',
+                        headerTitleStyle: {
+                            fontWeight: '700',
+                        }
+                    }} 
+                    />
                 <Stack.Group screenOptions={{headerShown : false}}>
                     <Stack.Screen name='Contacts' component = {ContactScreen} />
                     <Stack.Screen name='Call' component = {CallScreen} />

@@ -18,7 +18,7 @@ const ContactsHeader = ({filteredContacts, setFilteredContacts}: filtertypes) =>
     useEffect(() => {
         const newContacts = contacts.filter( contact => contact.user_display_name.toLowerCase().includes(search.toLowerCase()));
         setFilteredContacts(newContacts);
-    }, [search])
+    }, [search]);
 
     return (
         <View style = {Styles.headerMain}>
